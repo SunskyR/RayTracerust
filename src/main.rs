@@ -6,7 +6,6 @@ fn main() {
     let mut j = 256.0;
 
     while j >= 0.0 {
-        j -= 1.0;
         let mut i = 0.0;
         while i < 256.0 {
             let r = i / (image_width - 1) as f64;
@@ -19,5 +18,6 @@ fn main() {
             println!("{} {} {}", ir, ig, ib);
             i += 1.0;
         }
+        j -= 1.0;
     }
 }
