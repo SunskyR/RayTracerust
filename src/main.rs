@@ -1,3 +1,5 @@
+pub mod vec3;
+
 fn main() {
     let image_width = 256;
     let image_hight = 256;
