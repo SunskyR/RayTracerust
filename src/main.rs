@@ -3,11 +3,13 @@ pub mod vec3;
 fn main() {
     let image_width = 256;
     let image_hight = 256;
+
     println!("P3\n{} {}\n255", image_width, image_hight);
     let mut j = 256.0;
     while j >= 0.0 {
         eprint!("\rRendering now... {}%", (256.0 - j) / 2.56);
         let mut i = 0.0;
+
         while i < 256.0 {
             let r = i / (image_width - 1) as f64;
             let g = j / (image_hight - 1) as f64;
