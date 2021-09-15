@@ -15,7 +15,3 @@ impl vec3 {
         }
     }
 }
-
-impl Add for Vec3 {
-    type Output = Vec3;
-}
