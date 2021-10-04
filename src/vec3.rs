@@ -1,17 +1,17 @@
 use std::ops::{Add, Div, Mul, Neg, Sub};
 pub struct Vec3 {
-    pub x: f32,
-    pub y: f32,
-    pub z: f32,
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
 }
 
 impl Vec3 {
     // Length
-    pub fn length(&self) -> f32 {
+    pub fn length(&self) -> f64 {
         self.squared_length().sqrt()
     }
     // Squared length
-    pub fn squared_length(&self) -> f32 {
+    pub fn squared_length(&self) -> f64 {
         self.x * self.x + self.y * self.y + self.z * self.z
     }
     // Unit vector
@@ -19,7 +19,7 @@ impl Vec3 {
         self / self.length()
     }
     // Inner product
-    pub fn dot(&self, rhs: &Vec3) -> f32 {
+    pub fn dot(&self, rhs: &Vec3) -> f64 {
         self.x * rhs.x + self.y * rhs.y + self.z * rhs.z
     }
     // Cross product
@@ -68,10 +68,10 @@ impl Sub for &Vec3 {
     }
 }
 
-impl Mul<f32> for &Vec3 {
+impl Mul<f64> for &Vec3 {
     type Output = Vec3;
 
-    fn mul(self, rhs: f32) -> Self::Output {
+    fn mul(self, rhs: f64) -> Self::Output {
         Vec3 {
             x: self.x * rhs,
             y: self.y * rhs,
@@ -80,10 +80,10 @@ impl Mul<f32> for &Vec3 {
     }
 }
 
-impl Div<f32> for &Vec3 {
+impl Div<f64> for &Vec3 {
     type Output = Vec3;
 
-    fn div(self, rhs: f32) -> Self::Output {
+    fn div(self, rhs: f64) -> Self::Output {
         Vec3 {
             x: self.x / rhs,
             y: self.y / rhs,
